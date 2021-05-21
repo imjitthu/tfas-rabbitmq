@@ -3,7 +3,7 @@ locals {
   key_path = "test.pem"
 }
 
-resource "aws_instance" "rabbitmq_server" {
+resource "aws_instance" "rabbitmq" {
   # aws_spot_instabce_request for spot instance
   ami = "${var.AMI}"
   instance_type = "${var.INSTANCE_TYPE}"
@@ -14,7 +14,7 @@ resource "aws_instance" "rabbitmq_server" {
   }
 
 connection {
-  host = aws_instance.rabbitmq_server.public_ip
+  host = aws_instance.rabbitmq.public_ip
   type = "ssh"
   user = "${var.USER}"
   #private_key = file("${local.key_path}")
@@ -34,7 +34,7 @@ provisioner "remote-exec" {
 }
 
 provisioner "local-exec" {
-  command = "echo ${aws_instance.rabbitmq_server.public_ip} > rabbitmq_inv"
+  command = "echo ${aws_instance.rabbitmq.public_ip} > rabbitmq_inv"
   #command = "ansible-playbook -i ${aws_instance.rabbitmq.public_ip}, --private-key ${local.key_path} ${var.COMPONENT}.yml"
   #echo $IP component=${component} ansible_user=root ansible_password=DevOps321 >>inv
 }
