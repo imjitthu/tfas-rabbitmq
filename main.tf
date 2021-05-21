@@ -34,7 +34,7 @@ provisioner "remote-exec" {
 }
 
 provisioner "local-exec" {
-  command = "echo ${aws_instance.rabbitmq.public_ip} > rabbitmq_inv"
+  command = "echo ${aws_instance.rabbitmq_server.public_ip} > rabbitmq_inv"
   #command = "ansible-playbook -i ${aws_instance.rabbitmq.public_ip}, --private-key ${local.key_path} ${var.COMPONENT}.yml"
   #echo $IP component=${component} ansible_user=root ansible_password=DevOps321 >>inv
 }
