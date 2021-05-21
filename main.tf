@@ -25,6 +25,7 @@ provisioner "file" {
   source = "rabbitmq.sh"
   destination = "/tmp"
 }
+
 provisioner "remote-exec" {
   inline = [ 
     "set-hostname ${var.COMPONENT}",
