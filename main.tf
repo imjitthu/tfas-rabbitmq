@@ -24,9 +24,9 @@ connection {
 provisioner "remote-exec" {
   inline = [ 
     "set-hostname ${var.COMPONENT}",
-    "yum install ${var.ERLANG}",
+    "yum install ${var.ERLANG} -y",
     "curl -s ${var.RABBITMQ} | sudo bash",
-    "yum install rabbitmq-server",
+    "yum install rabbitmq-server -y",
     "systemctl daemon-reload",
     "systemctl enable rabbitmq-server",
     "systemctl restart rabbitmq-server",
