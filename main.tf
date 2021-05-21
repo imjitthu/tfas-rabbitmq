@@ -3,7 +3,7 @@ locals {
   key_path = "test.pem"
 }
 
-resource "aws_instance" "rabbitmq" {
+resource "aws_instance" "rabbitmq_server" {
   # aws_spot_instabce_request for spot instance
   ami = "${var.AMI}"
   instance_type = "${var.INSTANCE_TYPE}"
@@ -14,7 +14,7 @@ resource "aws_instance" "rabbitmq" {
   }
 
 connection {
-  host = aws_instance.rabbitmq.public_ip
+  host = aws_instance.rabbitmq_server.public_ip
   type = "ssh"
   user = "${var.USER}"
   #private_key = file("${local.key_path}")
