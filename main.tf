@@ -23,7 +23,7 @@ connection {
 
 provisioner "file" {
     source      = "rabbitmq.sh"
-    destination = "/tmp"
+    destination = "/tmp/rabbitmq.sh"
   }
 
 provisioner "remote-exec" {
