@@ -27,6 +27,7 @@ provisioner "remote-exec" {
     "yum install ${var.ERLANG} -y",
     "curl -s ${var.RABBITMQ} | sudo bash",
     "yum install rabbitmq-server -y",
+    "sh rabbitmq.sh"
     ]
 }
 
