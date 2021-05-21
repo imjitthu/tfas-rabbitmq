@@ -22,9 +22,9 @@ connection {
 }
 
 provisioner "file" {
-  source = "rabbitmq.sh"
-  destination = "/tmp"
-}
+    source      = "rabbitmq.sh"
+    destination = "/tmp"
+  }
 
 provisioner "remote-exec" {
   inline = [ 
