@@ -13,7 +13,7 @@ pipeline { //pipeline
                     sh 'terraform plan'
                     //sh 'terraform apply -auto-approve'
                     } //with credentials
-            ansiblePlaybook credentialsId: 'DevOps321', installation: 'ansibletool', inventory: 'rabbitmq_inv', playbook: 'rabbitmq.yml'
+            //ansiblePlaybook credentialsId: 'DevOps321', installation: 'ansibletool', inventory: 'rabbitmq_inv', playbook: 'rabbitmq.yml'
                 } //rabbitmq steps
             } //rabbitmq stage
         } //stages
