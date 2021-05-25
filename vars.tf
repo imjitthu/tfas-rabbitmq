@@ -7,7 +7,6 @@ variable "R53_ZONE_ID" {}
 variable "DOMAIN" {default = ""}
 
 variable "COMPONENT" {}
-variable "AMI" {}
 variable "ERLANG" {
     default = "http://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_23.2.3-1~centos~7_amd64.rpm"
 }
